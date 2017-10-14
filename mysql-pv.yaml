@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: lychee-efs-volume
+spec:
+  storageClassName: efs
+  capacity:
+    storage: 100Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: something_here
+    path: "/"

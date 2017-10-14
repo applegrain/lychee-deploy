@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: lychee
+  labels:
+    app: lychee
+spec:
+  selector:
+    matchLabels:
+      app: lychee
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: lychee
+    spec:
+      containers:
+      - image: kdelfour/lychee-docker:latest
+        name: lychee
+        ports:
+        - containerPort: 80
+          name: lychee

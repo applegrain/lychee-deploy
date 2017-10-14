@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: lychee-efs-vol
+  labels:
+    app: lychee
+spec:
+  storageClassName: efs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
